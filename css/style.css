@@ -1,3 +1,62 @@
+/* Card grid layout */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 100vw;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+.project-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.project-image {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+.project-link {
+    margin-top: 1rem;
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    background: #222;
+    color: #fff;
+    transition: background 0.2s;
+}
+.project-link:hover {
+    background: #ff9800;
+    color: #222;
+}
+
+@media (max-width: 1000px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .project-card {
+        padding: 1rem 0.5rem;
+    }
+}
 /* Visually hide section headings but keep for accessibility/SEO */
 h2 {
     position: absolute !important;
@@ -11,7 +70,7 @@ h2 {
 }
 /* Section divider style */
 .section-divider {
-    width: 100vw;
+    width: 100%;
     height: 4px;
     margin: 0;
     background: #222;
@@ -30,15 +89,16 @@ body {
     padding: 0;
     background: #f9f9f9;
     color: #222;
+    overflow-x: hidden;
 }
 header {
     background: #222;
     color: #fff;
     padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    padding-bottom: 0;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 nav ul {
     list-style: none;
@@ -83,6 +143,30 @@ footer {
     width: 100%;
     bottom: 0;
 }
+.scroll-content {
+    margin-top: 72px; /* height of header, adjust as needed */
+    height: calc(100vh - 72px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.page-grid {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+}
+.content-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+main {
+    flex: 1 0 auto;
+}
+footer {
+    flex-shrink: 0;
+}
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
@@ -94,4 +178,29 @@ footer {
     header {
         padding: 0.5rem;
     }
+}
+.main-nav {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.2rem;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-link.active {
+    color: #fff;
+    border-bottom: rgb(48, 170, 54) solid .3rem;
+}
+.nav-link.active:hover {
+    color: inherit;
+    color: #fff;
+    border-bottom: rgb(48, 170, 54) solid .3rem;
+}
+.nav-link:hover {
+    color: rgb(55, 104, 238);
 }
