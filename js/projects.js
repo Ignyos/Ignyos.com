@@ -1,86 +1,27 @@
 var projects = [
   {
-    name: "Project One",
-    description: "Short description for Project One.",
-    link: "project-one.html",
-    tags: ["web", "utility"],
-    image: "assets/project-one.png"
+    name: "Flashcards",
+    tagline: "Learning by reinforcement.",
+    description: "The classic concept of learning with flashcards improved. Spaced repetition makes sure you focus on the cards you struggle with, while ignoring the ones you already know well. Create your own decks to learn anything from languages to history.",
+    link: "https://flashcards.ignyos.com",
+    tags: ["web", "education"],
+    image: "assets/project-one.png",
+    template: "software",
+    buttons: [
+      { label: "Try It Out", url: "https://flashcards.ignyos.com", type: "light-blue" }
+    ]
   },
   {
-    name: "Project Two",
-    description: "Short description for Project Two.",
+    name: "Headless MAUI",
+    tagline: "A developer tool for building cross-platform applications.",
+    description: "A template project in GitHub to kickstart your .NET MAUI applications with a headless architecture, enabling seamless integration with various front-end frameworks.",
     link: "project-two.html",
     tags: ["mobile", "game"],
-    image: "assets/project-two.png"
-  },
-  {
-    name: "Project Three",
-    description: "Short description for Project Three.",
-    link: "project-three.html",
-    tags: ["desktop", "utility"],
-    image: "assets/project-three.png"
-  },
-  {
-    name: "Project Four",
-    description: "Short description for Project Four.",
-    link: "project-four.html",
-    tags: ["web", "tool"],
-    image: "assets/project-four.png"
-  },
-  {
-    name: "Project Five",
-    description: "Short description for Project Five.",
-    link: "project-five.html",
-    tags: ["mobile", "game"],
-    image: "assets/project-five.png"
-  },
-  {
-    name: "Project Six",
-    description: "Short description for Project Six.",
-    link: "project-six.html",
-    tags: ["web", "app"],
-    image: "assets/project-six.png"
-  },
-  {
-    name: "Project Seven",
-    description: "Short description for Project Seven.",
-    link: "project-seven.html",
-    tags: ["desktop", "utility"],
-    image: "assets/project-seven.png"
-  },
-  {
-    name: "Project Eight",
-    description: "Short description for Project Eight.",
-    link: "project-eight.html",
-    tags: ["web", "tool"],
-    image: "assets/project-eight.png"
-  },
-  {
-    name: "Project Nine",
-    description: "Short description for Project Nine.",
-    link: "project-nine.html",
-    tags: ["mobile", "app"],
-    image: "assets/project-nine.png"
-  },
-  {
-    name: "Project Ten",
-    description: "Short description for Project Ten.",
-    link: "project-ten.html",
-    tags: ["web", "game"],
-    image: "assets/project-ten.png"
-  },
-  {
-    name: "Project Eleven",
-    description: "Short description for Project Eleven.",
-    link: "project-eleven.html",
-    tags: ["desktop", "tool"],
-    image: "assets/project-eleven.png"
-  },
-  {
-    name: "Project Twelve",
-    description: "Short description for Project Twelve.",
-    link: "project-twelve.html",
-    tags: ["web", "utility"],
-    image: "assets/project-twelve.png"
+    image: "assets/headless-maui.svg",
+    template: "game",
+    buttons: [
+      { label: "More Info", url: "https://headless-maui.ignyos.com/", type: "light-blue" },
+      { label: "View on GitHub", url: "https://github.com/Ignyos/Headless-Maui", type: "grey" }
+    ]
   }
 ];
