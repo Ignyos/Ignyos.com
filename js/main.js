@@ -42,3 +42,17 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 });
+
+function updateScreenWidthIndicator() {
+  if (window.location.protocol === 'http:') {
+    const bpEl = document.getElementById('breakpoint-indicator');
+    if (bpEl && bpEl.parentNode) {
+      bpEl.parentNode.removeChild(bpEl);
+    }
+  } else {
+    const el = document.getElementById('screen-width-indicator');
+    if (el) el.textContent = `${window.innerWidth} `;
+  }
+}
+window.addEventListener('resize', updateScreenWidthIndicator);
+document.addEventListener('DOMContentLoaded', updateScreenWidthIndicator);
