@@ -1,0 +1,35 @@
+#breakpoint-indicator {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #222;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  z-index: 9999;
+  opacity: 0.8;
+}
+#breakpoint-indicator::after {
+  content: 'Large';
+}
+@media (max-width: 799px) and (min-width: 500px) {
+  #breakpoint-indicator::after {
+    content: 'Medium';
+  }
+}
+@media (max-width: 1599px) {
+  #breakpoint-indicator::after {
+    content: 'Medium';
+  }
+}
+@media (max-width: 1249px) {
+  #breakpoint-indicator::after {
+    content: 'Small';
+  }
+}
+@media (max-width: 499px) {
+  #breakpoint-indicator::after {
+    content: 'xSmall';
+  }
+}

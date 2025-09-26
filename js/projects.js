@@ -5,7 +5,7 @@ var projects = [
     description: "The classic concept of learning with flashcards improved. Spaced repetition makes sure you focus on the cards you struggle with, while ignoring the ones you already know well. Create your own decks to learn anything from languages to history.",
     link: "https://flashcards.ignyos.com",
     tags: ["web", "education"],
-    image: "assets/project-one.png",
+    image: "assets/flashcards.svg",
     template: "software",
     buttons: [
       { label: "Try It Out", url: "https://flashcards.ignyos.com", type: "light-blue" }
