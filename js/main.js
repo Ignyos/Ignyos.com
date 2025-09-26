@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function updateScreenWidthIndicator() {
-  if (window.location.protocol === 'http:') {
+  if (window.location.protocol === 'https:') {
     const bpEl = document.getElementById('breakpoint-indicator');
     if (bpEl && bpEl.parentNode) {
       bpEl.parentNode.removeChild(bpEl);
