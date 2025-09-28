@@ -1,3 +1,4 @@
+
 /* Card grid layout */
 .card-grid {
     display: grid;
@@ -9,8 +10,16 @@
 }
 
 .project-card {
-  color: #ddd;
     display: grid;
+    grid-template-columns: 1fr 2fr 5fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "logo name details"
+      "logo tagline details"
+      "logo tagline details"
+      "logo buttons details";
+    min-height: 220px;
+    color: #ddd;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 100%);
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -24,6 +33,7 @@
     box-shadow: 0 4px 16px rgba(0,0,0,0.5);
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0.2) 100%);
 }
+
 .project-image {
     grid-area: logo;
     height: 100%;
@@ -38,16 +48,21 @@
 .project-card:hover .project-image{
     filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
 }
+
 .project-name {
     grid-area: name;
     font-size: 1.5rem;
     font-weight: bold;
+    text-align: center;
 }
+
 .project-tagline {
     grid-area: tagline;
     font-size: 1rem;
     padding: 0 4rem;
+    text-align: center;
 }
+
 .project-details {
     grid-area: details;
     font-size: 1.5rem;
@@ -64,20 +79,10 @@
 }
 
 .card-btn {
-    display: inline-block;
+    /* display: inline-block; */
     padding: 0.5rem 1.2rem;
     border-radius: 4px;
     text-align: center;
-        .project-card {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 1rem;
-            min-height: 0;
-        }
-        .project-details {
-            display: none;
-        }
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
@@ -85,6 +90,7 @@
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
 }
+
 .card-btn-light-blue {
     background: #e3f2fd;
     color: #1976d2;
@@ -104,62 +110,72 @@
     color: #222;
 }
 
-@media (max-width: 600px) {
+/* #region Breakpoints */
+
+/*xxSmall*/
+@media (max-width: 399px) {
+  
+}
+
+/*xSmall*/
+@media (min-width: 400px) {
+  
+}
+
+/*Small*/
+@media (min-width: 1250px) {
     .card-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 1rem;
+        padding: 2rem 5rem;
     }
     .project-card {
-        padding: 1rem 0.5rem;
+        grid-template-areas:
+        "logo name details"
+        "logo tagline details"
+        "logo buttons details"
+        "logo buttons details";
+    }
+    .card-btn {
+        width: 80%;
+    }  
+}
+/*Medium*/
+@media (min-width: 1660px) {
+    .card-grid {
+        padding: 2rem 15rem;
+    }
+    .project-card {
+        grid-template-areas:
+        "logo name details"
+        "logo tagline details"
+        "logo buttons details"
+        "logo buttons details";
     }
 }
-@media (min-width: 800px) {
-  .project-card {
-    display: grid;
-    grid-template-columns: 1fr 2fr 5fr;
-    grid-template-rows: auto auto 1fr auto;
-    grid-template-areas:
-      "logo name details"
-      "logo tagline details"
-      "logo tagline details"
-      "logo buttons details";
-    min-height: 220px;
-  }
-  .project-image {
-    grid-area: logo;
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    align-self: stretch;
-  }
-  .project-name {
-    grid-area: name;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-  }
-  .project-tagline {
-    grid-area: tagline;
-    font-size: 1rem;
-    text-align: center;
-  }
-  .project-details {
-    grid-area: details;
-  }
-  .project-buttons {
-    grid-area: buttons;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-  }
+
+/*Large*/
+@media (min-width: 1820px) {
+    .project-tagline {
+        padding: 0 1rem;
+    }
 }
-@media (max-width: 1649px) {
-  .card-grid {
-    padding: 2rem 2rem;
-  }
+
+/*xLarge*/
+@media (min-width: 2000px) {
+    .project-name {
+        padding: 0;
+    }
+    .project-tagline {
+        padding: 0;
+    }
 }
+
+/*xxLarge*/
+@media (min-width: 2500px) {
+
+}
+
+/* #endregion Breakpoints */
+
 /* Visually hide section headings but keep for accessibility/SEO */
 h2 {
     position: absolute !important;
@@ -223,11 +239,6 @@ nav a.tab.active {
     color: #222;
     font-weight: bold;
 }
-.category-section {
-    min-height: 60vh;
-    padding: 2rem 1rem;
-    border-radius: 8px;
-}
 .software-bg {
     background: linear-gradient(135deg, #e3f2fd 60%, #bbdefb 100%);
 }
@@ -247,7 +258,7 @@ footer {
     bottom: 0;
 }
 .scroll-content {
-    margin-top: 72px; /* height of header, adjust as needed */
+    margin-top: 72px;
     height: calc(100vh - 72px);
     overflow-y: auto;
     overflow-x: hidden;
@@ -269,18 +280,6 @@ main {
 }
 footer {
     flex-shrink: 0;
-}
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    .category-section {
-        padding: 1rem 0.5rem;
-    }
-    header {
-        padding: 0.5rem;
-    }
 }
 .main-nav {
     margin-top: 1rem;
@@ -307,27 +306,10 @@ footer {
 .nav-link:hover {
     color: rgb(55, 104, 238);
 }
-.software-card.narrow {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.software-card.wide {
-    flex-direction: row;
-    align-items: flex-start;
-    text-align: left;
-}
-.software-card.wide .project-image {
-    margin-right: 1.5rem;
-    margin-bottom: 0;
-}
-.software-card.narrow .project-image {
-    margin-bottom: 1rem;
-    margin-right: 0;
-}
-.software-card .card-body {
-    display: flex;
-    flex-direction: inherit;
-    align-items: inherit;
-    text-align: inherit;
+
+.footer,a {
+    color: #4682db;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.2rem;
 }

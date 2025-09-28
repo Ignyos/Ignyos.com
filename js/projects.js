@@ -2,7 +2,7 @@ var projects = [
   {
     name: "Flashcards",
     tagline: "Learning by reinforcement.",
-    description: "The classic concept of learning with flashcards improved. Spaced repetition makes sure you focus on the cards you struggle with, while ignoring the ones you already know well. Create your own decks to learn anything from languages to history.",
+    description: "<span>The classic concept of learning with flashcards - improved.</span><br/><br/><span>Spaced repetition makes sure you focus on the cards you struggle with, while ignoring the ones you already know well.</span><br/><br/><span>Create your own decks to learn anything from languages to history.</span>",
     link: "https://flashcards.ignyos.com",
     tags: ["web", "education"],
     image: "assets/flashcards.svg",
@@ -21,7 +21,7 @@ var projects = [
     template: "game",
     buttons: [
       { label: "More Info", url: "https://headless-maui.ignyos.com/", type: "light-blue" },
-      { label: "View on GitHub", url: "https://github.com/Ignyos/Headless-Maui", type: "grey" }
+      { label: "On GitHub", url: "https://github.com/Ignyos/Headless-Maui", type: "grey" }
     ]
   }
 ];

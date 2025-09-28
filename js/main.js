@@ -29,10 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				const card = document.createElement('div');
 				card.className = 'project-card';
 				card.setAttribute('data-tags', project.tags.join(','));
-				// Add template class for software cards
-				if (project.template === 'software') {
-					card.classList.add('software-card');
-				}
 				card.innerHTML = `
 					${renderCardBody(project)}
 					${renderCardFooter(project)}

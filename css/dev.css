@@ -1,7 +1,8 @@
+/* Breakpoint indicator for dev tools */
 #breakpoint-indicator {
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  right: 20px;
   background: #222;
   color: #fff;
   padding: 0.5rem 1rem;
@@ -10,26 +11,25 @@
   z-index: 9999;
   opacity: 0.8;
 }
-#breakpoint-indicator::after {
-  content: 'Large';
+#breakpoint-indicator::after { content: 'Default'; }
+@media (max-width: 399px) {
+  #breakpoint-indicator::after { content: 'xxSmall'; }
 }
-@media (max-width: 799px) and (min-width: 500px) {
-  #breakpoint-indicator::after {
-    content: 'Medium';
-  }
+@media (min-width: 400px) {
+  #breakpoint-indicator::after { content: 'xSmall'; }
 }
-@media (max-width: 1599px) {
-  #breakpoint-indicator::after {
-    content: 'Medium';
-  }
+@media (min-width: 1250px) {
+  #breakpoint-indicator::after { content: 'Small'; }
 }
-@media (max-width: 1249px) {
-  #breakpoint-indicator::after {
-    content: 'Small';
-  }
+@media (min-width: 1660px) {
+  #breakpoint-indicator::after { content: 'Medium'; }
 }
-@media (max-width: 499px) {
-  #breakpoint-indicator::after {
-    content: 'xSmall';
-  }
+@media (min-width: 1820px) {
+  #breakpoint-indicator::after { content: 'Large'; }
+}
+@media (min-width: 2000px) {
+  #breakpoint-indicator::after { content: 'xLarge'; }
+}
+@media (min-width: 2500px) {
+  #breakpoint-indicator::after { content: 'xxLarge'; }
 }
