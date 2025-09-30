@@ -18,7 +18,7 @@
       "logo tagline details"
       "logo tagline details"
       "logo buttons details";
-    min-height: 220px;
+    min-height: 12rem;
     color: #ddd;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 100%);
     border-radius: 12px;
@@ -112,21 +112,66 @@
 
 /* #region Breakpoints */
 
+/*xxxSmall*/
+@media (max-width: 600px) {
+    .card-grid {
+        padding: 2rem 2rem;
+    }
+    .project-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: 6rem auto auto auto;
+        grid-template-areas:
+            "logo"
+            "name"
+            "tagline"
+            "buttons";
+        height: 18rem;
+    }
+    .project-details {
+        display: none;
+    }
+}
+
 /*xxSmall*/
-@media (max-width: 399px) {
-  
+@media (min-width: 601px) and (max-width: 1084px) {
+    .card-grid {
+        padding: 2rem 2rem;
+    }
+    .project-card {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3rem 3rem 3rem 3rem;
+        grid-template-areas:
+            "logo name"
+            "logo tagline"
+            "logo buttons"
+            "logo buttons";
+    }
+    .project-details {
+        display: none;
+    }
 }
 
 /*xSmall*/
-@media (min-width: 400px) {
-  
+@media (min-width: 1085px) and (max-width: 1249px) {
+    .card-grid {
+        padding: 2rem 15rem;
+    }
+    .project-card {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3rem 3rem 3rem 3rem;
+        grid-template-areas:
+            "logo name"
+            "logo tagline"
+            "logo buttons"
+            "logo buttons";
+    }
+    .project-details {
+        display: none;
+    }
 }
 
 /*Small*/
-@media (min-width: 1250px) {
-    .card-grid {
-        padding: 2rem 5rem;
-    }
+@media (min-width: 1250px) and (max-width: 1659px) {
     .project-card {
         grid-template-areas:
         "logo name details"
@@ -139,7 +184,7 @@
     }  
 }
 /*Medium*/
-@media (min-width: 1660px) {
+@media (min-width: 1660px) and (max-width: 1819px) {
     .card-grid {
         padding: 2rem 15rem;
     }
@@ -153,7 +198,7 @@
 }
 
 /*Large*/
-@media (min-width: 1820px) {
+@media (min-width: 1820px) and (max-width: 1999px) {
     .project-tagline {
         padding: 0 1rem;
     }
