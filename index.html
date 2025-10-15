@@ -3,34 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ignyos - Home</title>
+    <title>Ignyos</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dev.css">
     <script src="js/projects.js"></script>
 </head>
 <body>
-    <div class="page-grid">
-        <header>
-            <h1 style="display:flex; align-items:center; gap:0.5em;">
-                <a href="index.html" title="Home" style="display:inline-flex; align-items:center; text-decoration:none; color:inherit;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.3em;"><path d="M3 9l9-7 9 7"/><path d="M9 22V12h6v10"/></svg>
-                </a>
-                Ignyos
-            </h1>
-        </header>
-        <div class="content-section">
-            <main>
-                <div class="card-grid"></div>
-            </main>
-            <footer>
-                <p>&copy; 2025 Ignyos. All rights reserved.</p>
-                <!-- <div style="text-align:center; margin-top:0.5em;">
-                    <a href="about.html" target="_blank" rel="noopener">About</a>
-                </div> -->
-            </footer>
+    <header>
+        <h1>Ignyos</h1>
+    </header>
+    
+    <main>
+        <div class="projects-container" id="projects-container">
+            <!-- Projects will be dynamically loaded here -->
         </div>
-        <div id="breakpoint-indicator"><span id="screen-width-indicator"></span></div>
-    </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Ignyos. All rights reserved.</p>
+        <a href="about.html" rel="noopener">About</a>
+    </footer>
+    
     <script src="js/main.js"></script>
 </body>
 </html>

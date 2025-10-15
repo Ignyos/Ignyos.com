@@ -1,54 +1,43 @@
-// Tab highlighting on scroll
-function renderCardBody(project) {
-    // For demo, use placeholder tagline and details if not present
-    const tagline = project.tagline || "A brief tagline goes here.";
-    const details = project.details || project.description || "Detailed description goes here.";
-    return `
-        <img src="${project.image}" alt="${project.name} logo" class="project-image">
-        <div class="project-name">${project.name}</div>
-        <div class="project-tagline">${tagline}</div>
-        <div class="project-details">${details}</div>
+// Modern project card rendering
+function createProjectCard(project) {
+    const cardElement = document.createElement('div');
+    cardElement.className = 'project-card';
+    cardElement.setAttribute('data-tags', project.tags.join(','));
+    
+    // Determine button classes
+    const buttons = project.buttons.map(btn => {
+        const btnClass = btn.type === 'light-blue' ? 'btn-primary' : 'btn-secondary';
+        return `<a href="${btn.url}" class="btn ${btnClass}" target="_blank" rel="noopener noreferrer">${btn.label}</a>`;
+    }).join('');
+    
+    cardElement.innerHTML = `
+        <div class="card-header">
+            <img src="${project.image}" alt="${project.name} logo" class="project-logo">
+            <div class="card-title-section">
+                <h3 class="project-title">${project.name}</h3>
+                <p class="project-tagline">${project.tagline}</p>
+            </div>
+        </div>
+        <div class="card-content">
+            <p class="project-description">${project.description.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()}</p>
+        </div>
+        <div class="card-actions">
+            ${buttons}
+        </div>
     `;
-}
-
-function renderCardFooter(project) {
-    if (!project.buttons || !Array.isArray(project.buttons)) return "";
-    return `<div class="project-buttons">${project.buttons.map(btn => `
-        <a href="${btn.url}" class="card-btn card-btn-${btn.type || 'primary'}" target="_blank" rel="noopener noreferrer">${btn.label}</a>
-    `).join('')}</div>`;
+    
+    return cardElement;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-	// Only render project cards on index.html
-	if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
-		if (typeof projects !== 'undefined' && Array.isArray(projects)) {
-			const main = document.querySelector('main');
-			main.innerHTML = '<div class="card-grid"></div>';
-			const grid = main.querySelector('.card-grid');
-			projects.forEach(project => {
-				const card = document.createElement('div');
-				card.className = 'project-card';
-				card.setAttribute('data-tags', project.tags.join(','));
-				card.innerHTML = `
-					${renderCardBody(project)}
-					${renderCardFooter(project)}
-				`;
-				grid.appendChild(card);
-			});
-		}
-	}
-});
-
-function updateScreenWidthIndicator() {
-  if (window.location.protocol === 'https:') {
-    const bpEl = document.getElementById('breakpoint-indicator');
-    if (bpEl && bpEl.parentNode) {
-      bpEl.parentNode.removeChild(bpEl);
+    // Only render project cards on the home page
+    const container = document.getElementById('projects-container');
+    if (container && typeof projects !== 'undefined' && Array.isArray(projects)) {
+        // Add staggered animation delay
+        projects.forEach((project, index) => {
+            const card = createProjectCard(project);
+            card.style.animationDelay = `${index * 0.1}s`;
+            container.appendChild(card);
+        });
     }
-  } else {
-    const el = document.getElementById('screen-width-indicator');
-    if (el) el.textContent = `${window.innerWidth} `;
-  }
-}
-window.addEventListener('resize', updateScreenWidthIndicator);
-document.addEventListener('DOMContentLoaded', updateScreenWidthIndicator);
+});
