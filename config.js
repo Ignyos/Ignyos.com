@@ -3,6 +3,8 @@ const config = {
     maxParticles: 200,           // Maximum number of particles on screen at once
     particleSpeedMin: 0.35,     // Minimum speed of particle movement (pixels per frame)
     particleSpeedMax: 0.85,     // Maximum speed of particle movement (pixels per frame)
+    fastParticleChance: 0.2,   // Probability a particle will be fast (0-1, e.g., 0.05 = 5%)
+    fastParticleMultiplier: 3,  // Speed multiplier for fast particles
     particleSize: 2,            // Base size of each particle in pixels (used as minimum)
     particleSizeMax: 6,         // Maximum starting size of particles
     spawnRate: 0.03,            // Probability of spawning a new particle each frame (0-1)

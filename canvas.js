@@ -27,6 +27,11 @@ class Particle {
         // Speed variation - random speed within configured range
         this.speed = config.particleSpeedMin + Math.random() * (config.particleSpeedMax - config.particleSpeedMin);
         
+        // Occasionally create a fast particle
+        if (Math.random() < config.fastParticleChance) {
+            this.speed *= config.fastParticleMultiplier;
+        }
+        
         // Size variation - randomly choose start and end sizes independently
         const minSize = config.particleSize;
         const maxSize = config.particleSizeMax;
