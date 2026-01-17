@@ -28,10 +28,10 @@ body {
     height: calc(100vh - 4rem);
     margin: 2rem auto;
     padding: 4rem 2rem;
+    padding-top: 1rem;
     position: relative;
     z-index: 1;
     background-color: rgba(10, 10, 10, .75);
-    /* background-color: red; */
     border-radius: 16px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -89,12 +89,20 @@ h2 {
 }
 
 .project h3 a {
+    display: inline-block;
+    padding: 0.25rem .75rem;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.02);
     color: #ffffff;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
-.project h3 a:hover {
+.project h3 a:hover,
+.project h3 a:active {
+    background-color: rgba(255, 155, 107, 0.08);
+    border-color: #3a3a3a;
     color: #ff9b6b;
 }
 
