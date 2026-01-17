@@ -4,25 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ignyos</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/projects.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+    <script src="canvas.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Ignyos</h1>
-    </header>
+    <canvas id="background"></canvas>
     
-    <main>
-        <div class="projects-container" id="projects-container">
-            <!-- Projects will be dynamically loaded here -->
-        </div>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 Ignyos. All rights reserved.</p>
-        <a href="about.html" rel="noopener">About</a>
-    </footer>
-    
-    <script src="js/main.js"></script>
+    <div class="content">
+        <header>
+            <h1 style="color: #c18b5a;">Ignyos</h1>
+            <p>These are my personal projects. As a developer who enjoys creating, I build applications across different domains such as entertainment, personal utilities, and whatever inspires me. This is where I share them with anyone who might find them useful or fun.</p>
+        </header>
+
+        <main>
+            <section class="projects">
+                <h2>Available Applications</h2>
+                
+                <div class="project">
+                    <h3><a href="https://flashcards.ignyos.com">Flashcards</a></h3>
+                    <p>A spaced repetition learning application to help you study and retain information effectively.</p>
+                </div>
+
+                <div class="project">
+                    <h3><a href="https://trepenta.ignyos.com">Trepenta</a></h3>
+                    <p>A strategic card game for 2-6 players combining hand management with tactical field placement. Includes rules, house rule variants, and a scorekeeper.</p>
+                </div>
+
+                <div class="project">
+                    <h3><a href="https://sudoku.ignyos.com">Sudoku</a></h3>
+                    <p>Classic Sudoku puzzles with a modern interface. Generate new puzzles, enter your own, or use hints and auto-solve features.</p>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

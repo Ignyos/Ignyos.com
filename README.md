@@ -1,5 +1,17 @@
-# Ignyos
+# Ignyos.com
 
-This repository is the home page for Ignyos, where you can find links to our products and services.
+Personal site for Ignyos—a collection of applications I've built and shared.
 
-Hosted via GitHub Pages.
+## About
+
+Ignyos is my personal brand for creating and sharing applications across various domains. The site serves as a simple directory of available projects.
+
+## Development
+
+This is a static site hosted via GitHub Pages. The design is intentionally minimal with a dark theme.
+
+## Structure
+
+- `index.html` - Main homepage
+- `style.css` - Styling
+- `CNAME` - Custom domain configuration
